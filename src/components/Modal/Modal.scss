@@ -1,0 +1,222 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 2rem;
+
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    &__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--dark-brown);
+      transition: var(--transition);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: var(--primary-green);
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+      }
+    }
+
+    &__header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding-right: 2rem;
+
+      h2 {
+        color: var(--primary-green);
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      p {
+        color: var(--dark-brown);
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--dark-brown);
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        font-family: inherit;
+        transition: var(--transition);
+        
+        &:focus {
+          outline: none;
+          border-color: var(--primary-green);
+          box-shadow: 0 0 0 2px rgba(37, 116, 41, 0.1);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+
+      &--checkbox {
+        margin: 1.5rem 0;
+      }
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      font-weight: normal;
+      margin-bottom: 0;
+      position: relative;
+      padding-left: 2rem;
+      line-height: 1.4;
+
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+          background-color: var(--primary-green);
+          border-color: var(--primary-green);
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #fff;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        transition: var(--transition);
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+          left: 6px;
+          top: 2px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+
+      &:hover input ~ .checkmark {
+        border-color: var(--primary-green);
+      }
+
+      .checkbox-text {
+        font-size: 0.9rem;
+        color: var(--dark-brown);
+
+        a {
+          color: var(--primary-green);
+          text-decoration: none;
+          transition: var(--transition);
+
+          &:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .form-notice{
+      margin-top: 10px;
+
+      &__text{
+        margin-top: 20px;
+        color: var(--dark-brown);
+        font-size: 0.9rem;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      transition: var(--transition);
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+
+        &:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 1rem;
+
+    .modal {
+      padding: 1.5rem;
+
+      &__header {
+        padding-right: 0;
+      }
+
+      .checkbox-label {
+        .checkbox-text {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

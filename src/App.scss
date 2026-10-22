@@ -1,0 +1,128 @@
+:root {
+  --primary-green: #257429;
+  --secondary-green: #2b8c2e;
+  --accent-gold: #deaa00;
+  --dark-brown: #5d4037;
+  --gray-light: #f5f5f5;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: var(--gray-light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @media (max-width: 1200px) {
+    max-width: 992px;
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    max-width: 768px;
+    padding: 0 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 576px;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0.5rem;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &--primary {
+    background: linear-gradient(135deg, var(--primary-green), var(--accent-gold));
+    color: white;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Адаптивность для кнопок
+  @media (max-width: 992px) {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}
+
+// Улучшения для мобильных устройств
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+// Предотвращение горизонтального скролла
+.App {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+// Фикс для touch устройств
+@media (max-width: 768px) {
+  .btn, .nav__link, .header__burger {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
