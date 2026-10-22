@@ -77,7 +77,7 @@ const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 
                         <div className="header__actions">
                             <div className="header__social">
-                                <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer">
+                                <a href="https://t.me/Egorighrr" target="_blank" rel="noopener noreferrer">
                                     <img src={telegram} alt="Telegram" className="social-icon" />
                                 </a>
                                 <a href="https://wa.me/79212351506" target="_blank" rel="noopener noreferrer">

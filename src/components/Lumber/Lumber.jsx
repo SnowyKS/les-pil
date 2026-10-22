@@ -197,7 +197,7 @@ const Lumber = () => {
                                 🕒 Ежедневно 7:00 - 22:00
                             </p>
                             <div className="footer__social">
-                                <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer">
+                                <a href="https://t.me/Egorighrr" target="_blank" rel="noopener noreferrer">
                                     <img className='social-icon' src={telegram} alt="Telegram" />
                                 </a>
                                 <a href="https://wa.me/79212351506" target="_blank" rel="noopener noreferrer">
