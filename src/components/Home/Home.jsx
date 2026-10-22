@@ -79,7 +79,7 @@ const Home = () => {
                             </div>
                             <div className="hero__info">
                                 <div className="hero__contact">
-                                    <a href="tel:+79001234567" className="hero__phone">+7 (921) 235-15-06</a>
+                                    <a href="tel:+79212351506" className="hero__phone">+7 (921) 235-15-06</a>
                                 </div>
                                 <p className="hero__location">📍 д. Верховино, Никольский район</p>
                             </div>

@@ -6,10 +6,12 @@ import Lumber from './components/Lumber/Lumber';
 import Contacts from './components/Contacts/Contacts';
 import Privacy from './components/Privacy/Privacy';
 import TermsOfUse from './components/TermsOfUse/TermsOfUse';
+import { useMetrika } from './metrika';
 import './App.scss';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useMetrika();
 
   return (
       <div className="App">

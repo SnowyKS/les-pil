@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Modal.scss';
+import { reachGoal } from '../../metrika';
 
 const Modal = ({ isOpen, onClose, productName = '' }) => {
     const [formData, setFormData] = useState({
@@ -48,6 +49,7 @@ const Modal = ({ isOpen, onClose, productName = '' }) => {
             const result = await response.json();
 
             if (result.success) {
+                reachGoal('order', { product: productName || 'Общий запрос' });
                 alert(`✅ ${result.message}\n\nСпасибо, ${formData.name}! Мы свяжемся с вами в ближайшее время.`);
                 onClose();
                 setFormData({ name: '', phone: '', email: '', message: '', agree: false });
