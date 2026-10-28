@@ -64,7 +64,7 @@ const Contacts = () => {
                         <h2>Как добраться</h2>
                         <div className="map-container">
                             <iframe
-                                src="https://yandex.ru/map-widget/v1/?ll=45.531242%2C56.328383&z=12&pt=45.531242,56.328383,pm2grl"
+                                src="https://yandex.ru/map-widget/v1/?ll=44.707310%2C59.552403&z=12&pt=44.707310,59.552403,pm2grl"
                                 width="100%"
                                 height="400"
                                 frameBorder="0"
@@ -80,7 +80,7 @@ const Contacts = () => {
                                     <li>Пилорама в 500 м от поворота</li>
                                     <li>Ориентир — склад пиломатериалов</li>
                                 </ul>
-                                <p className="note">Точные координаты: 56.328383, 45.531242</p>
+                                <p className="note">Точные координаты: 59.552403, 44.707310</p>
                             </div>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ const Contacts = () => {
 
                     <div className="footer__bottom">
                         <div className="footer__copyright">
-                            © 2024 Лес и пиломатериалы от производителя. Все права защищены.
+                            © {new Date().getFullYear()} Лес и пиломатериалы от производителя. Все права защищены.
                         </div>
                         <div className="footer__legal">
                             <Link to="/privacy-policy" className="footer__legal-link">Политика конфиденциальности</Link>

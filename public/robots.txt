@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://les-pil.vercel.app/sitemap.xml
+Sitemap: https://snowyks.github.io/les-pil/sitemap.xml

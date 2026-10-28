@@ -229,7 +229,7 @@ const Lumber = () => {
 
                     <div className="footer__bottom">
                         <div className="footer__copyright">
-                            © 2024 Лес и пиломатериалы от производителя. Все права защищены.
+                            © {new Date().getFullYear()} Лес и пиломатериалы от производителя. Все права защищены.
                         </div>
                         <div className="footer__legal">
                             <Link to="/privacy-policy" className="footer__legal-link">Политика конфиденциальности</Link>

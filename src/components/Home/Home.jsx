@@ -36,6 +36,12 @@ const Home = () => {
         balans, otpravka1, brus1,
         krugl1, balansOtpravka, sort12
     ];
+    // Подписи для поиска по картинкам и экранных дикторов — в том же порядке, что и фото
+    const galleryAlts = [
+        'Лес на пилораме в д. Верховино', 'Штабель бруса на складе пилорамы', 'Лес кругляк в штабеле',
+        'Баланс на складе', 'Отгрузка пиломатериалов покупателю', 'Брус естественной влажности',
+        'Лес кругляк на пилораме', 'Отгрузка баланса', 'Доска обрезная'
+    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -100,10 +106,10 @@ const Home = () => {
 
             <section className="advantages">
                 <div className="container__adv">
-                    <h1 className="advantages__title">
+                    <h2 className="advantages__title">
                         Почему<br />
                         <span className="advantages__subline">нас выбирают</span>
-                    </h1>
+                    </h2>
                     <div className="advantage-group">
                         <div className="advantage">
                             <div className="advantage__content">
@@ -239,7 +245,8 @@ const Home = () => {
                             >
                                 <img
                                     src={image}
-                                    alt={`Производство ${index + 1}`}
+                                    alt={galleryAlts[index]}
+                                    loading="lazy"
                                     className="gallery__image"
                                 />
                                 <div className="gallery__overlay">
@@ -304,7 +311,7 @@ const Home = () => {
 
                     <div className="footer__bottom">
                         <div className="footer__copyright">
-                            © 2024 Лес и пиломатериалы от производителя. Все права защищены.
+                            © {new Date().getFullYear()} Лес и пиломатериалы от производителя. Все права защищены.
                         </div>
                         <div className="footer__legal">
                             <Link to="/privacy-policy" className="footer__legal-link">Политика конфиденциальности</Link>

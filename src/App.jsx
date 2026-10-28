@@ -7,10 +7,12 @@ import Contacts from './components/Contacts/Contacts';
 import Privacy from './components/Privacy/Privacy';
 import TermsOfUse from './components/TermsOfUse/TermsOfUse';
 import { useMetrika } from './metrika';
+import { useSeo } from './seo';
 import './App.scss';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useSeo(); // до useMetrika: хит в Метрику берёт уже новый document.title
   useMetrika();
 
   return (
