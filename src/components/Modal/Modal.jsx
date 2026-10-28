@@ -31,8 +31,8 @@ const Modal = ({ isOpen, onClose, productName = '' }) => {
         setIsSubmitting(true);
 
         try {
-            // Отправляем данные на наш сервер
-            const response = await fetch('/api/order', {
+            // Отправляем данные на наш сервер (на GitHub Pages своего API нет — шлём на Vercel)
+            const response = await fetch(process.env.REACT_APP_ORDER_URL || '/api/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

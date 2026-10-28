@@ -3,6 +3,14 @@
 //   TELEGRAM_BOT_TOKEN — токен бота от @BotFather
 //   TELEGRAM_CHAT_ID   — кому слать заявки; несколько получателей через запятую
 module.exports = async (req, res) => {
+  // Копия сайта на GitHub Pages шлёт заявки сюда с другого домена
+  res.setHeader('Access-Control-Allow-Origin', 'https://snowyks.github.io');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
